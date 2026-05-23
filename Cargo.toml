@@ -1,0 +1,30 @@
+[package]
+name = "mcp-a2a"
+version = "1.0.0"
+edition = "2024"
+authors = ["James Karanja Maina <james.karanja@zavora.ai>"]
+license = "Apache-2.0"
+description = "A2A Remote Agent MCP server for ADK-Rust Enterprise — agent-card discovery, task management, streaming, and push notifications"
+repository = "https://github.com/zavora-ai/mcp-a2a"
+homepage = "https://enterprise.adk-rust.com"
+keywords = ["mcp", "a2a", "agent", "protocol", "enterprise"]
+categories = ["network-programming", "development-tools"]
+rust-version = "1.85"
+readme = "README.md"
+
+[dependencies]
+adk-mcp-sdk = "0.1.0"
+rmcp = { version = "1.7", features = ["server", "transport-io", "transport-streamable-http-server", "macros"] }
+tokio = { version = "1.43", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+async-trait = "0.1"
+thiserror = "2.0"
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.11", features = ["v4"] }
+schemars = "1"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+rustls = { version = "0.23", features = ["aws-lc-rs"] }

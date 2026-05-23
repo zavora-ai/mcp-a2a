@@ -1,0 +1,4 @@
+google-adk[a2a]
+langgraph
+langchain-google-genai
+a2a-sdk
