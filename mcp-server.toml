@@ -1,0 +1,88 @@
+server_id = "mcp_a2a"
+display_name = "A2A Remote Agent"
+version = "1.2.0"
+domain = "agents"
+sdk_version = "0.1.0"
+risk_level = "medium"
+writes_allowed = "gated"
+transports = ["stdio"]
+credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
+
+[[tools]]
+name = "fetch_agent_card"
+description = "Fetch /.well-known/agent-card.json from a remote agent"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "validate_agent_card"
+description = "Verify signature, version, auth, and capabilities of an agent card"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_agents"
+description = "Show configured remote agents"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "send_task"
+description = "Create or continue a remote A2A task"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "send_task_streaming"
+description = "Start remote task with streaming updates"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "get_task"
+description = "Fetch task state and history"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_tasks"
+description = "Page and filter remote task registry"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "cancel_task"
+description = "Cancel running remote task"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "subscribe_events"
+description = "Open SSE subscription for task events"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "manage_push_notifications"
+description = "Create, update, or delete push notification configs"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_agent_capabilities"
+description = "Fetch private agent capabilities (extended card)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []

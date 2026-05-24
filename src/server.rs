@@ -1,3 +1,4 @@
+use adk_mcp_sdk::{HealthCheck, HealthStatus};
 use rmcp::{handler::server::wrapper::Parameters, schemars, tool, tool_router};
 use serde::{Deserialize, Serialize};
 
@@ -184,6 +185,17 @@ impl A2aServer {
                 "last_seen_at": agent.last_seen_at,
             })).unwrap(),
             None => format!("Agent not found: {}", i.agent_id),
+        }
+    }
+}
+
+#[async_trait::async_trait]
+impl HealthCheck for A2aServer {
+    async fn check_health(&self) -> HealthStatus {
+        HealthStatus {
+            healthy: true,
+            message: Some("operational".into()),
+            latency_ms: Some(1),
         }
     }
 }

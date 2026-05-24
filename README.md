@@ -3,6 +3,7 @@
 [![Crates.io](https://img.shields.io/crates/v/mcp-a2a.svg)](https://crates.io/crates/mcp-a2a)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![ADK-Rust Enterprise](https://img.shields.io/badge/ADK--Rust-Enterprise-purple.svg)](https://enterprise.adk-rust.com)
+[![Registry Ready](https://img.shields.io/badge/ADK_Registry-Ready-green.svg)](https://www.zavora.ai)
 
 Agent-to-Agent protocol management for [ADK-Rust Enterprise](https://enterprise.adk-rust.com). Discover remote agents, send tasks, stream results, and manage push notifications — across any framework that implements the [A2A protocol](https://github.com/google/A2A).
 
@@ -258,3 +259,12 @@ Apache-2.0 — see [LICENSE](LICENSE) for details.
 Part of the [ADK-Rust Enterprise](https://enterprise.adk-rust.com) MCP server ecosystem.
 
 Built with ❤️ by [Zavora AI](https://zavora.ai)
+
+## Registry Compliance
+
+This server implements the [ADK MCP SDK](https://crates.io/crates/adk-mcp-sdk) contract:
+
+- **HealthCheck** — async health probe for registry monitoring
+- **mcp-server.toml** — manifest declaring tools, risk classes, and credentials
+- **Structured tracing** — `RUST_LOG` env-filter for observability
+
