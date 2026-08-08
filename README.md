@@ -268,3 +268,6 @@ This server implements the [ADK MCP SDK](https://crates.io/crates/adk-mcp-sdk) c
 - **mcp-server.toml** — manifest declaring tools, risk classes, and credentials
 - **Structured tracing** — `RUST_LOG` env-filter for observability
 
+## rmcp and MCP compatibility
+
+This server is built with [`rmcp` 3.1.2](https://github.com/modelcontextprotocol/rust-sdk/releases/tag/rmcp-v3.1.2) and requires Rust 1.88 or newer. The rmcp 3 rollout retains legacy MCP initialization compatibility and targets MCP protocol revisions `2025-11-25` and `2026-07-28`.
