@@ -9,11 +9,11 @@ repository = "https://github.com/zavora-ai/mcp-a2a"
 homepage = "https://enterprise.adk-rust.com"
 keywords = ["mcp", "a2a", "agent", "protocol", "enterprise"]
 categories = ["network-programming", "development-tools"]
-rust-version = "1.88"
+rust-version = "1.94.1"
 readme = "README.md"
 
 [dependencies]
-adk-mcp-sdk = "0.1.0"
+adk-mcp-sdk = { version = "0.2.0", git = "https://github.com/zavora-ai/adk-mcp-sdk.git", rev = "4dac4301441a8a51a042fd66cc1798f0ec3e3f55" }
 rmcp = { version = "3.1.2", features = ["server", "transport-io", "transport-streamable-http-server", "macros"] }
 tokio = { version = "1.43", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
