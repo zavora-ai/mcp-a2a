@@ -58,7 +58,7 @@ pub struct GetExtendedAgentCardInput { pub agent_id: String }
 
 // --- Tools ---
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl A2aServer {
     #[tool(description = "Fetch /.well-known/agent-card.json from a remote agent")]
     async fn resolve_agent_card(&self, Parameters(i): Parameters<ResolveAgentCardInput>) -> String {
@@ -198,4 +198,11 @@ impl HealthCheck for A2aServer {
             latency_ms: Some(1),
         }
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: A2aServer,
+    task_tools: ["subscribe_to_task"],
+    approval_tools: ["cancel_task"],
+    cache_ttl_ms: 60_000,
 }
